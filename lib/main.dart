@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
@@ -45,8 +44,14 @@ class _MyAppState extends State<MyApp> {
       lightingModelName: ARKitLightingModel.lambert,
       diffuse: ARKitMaterialProperty.image('assets/wimtorq-logo.jpg'),
     );
+
+    final another = ARKitMaterial(
+      lightingModelName: ARKitLightingModel.physicallyBased,
+      diffuse: ARKitMaterialProperty.image('assets/wimtorq-logo.jpg'),
+    );
+
     final sphere = ARKitSphere(
-      materials: [material],
+      materials: [material, another],
       radius: 0.5,
     );
 
