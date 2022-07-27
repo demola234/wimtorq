@@ -45,14 +45,9 @@ class _MyAppState extends State<MyApp> {
       diffuse: ARKitMaterialProperty.image('assets/wimtorq-logo.jpg'),
     );
 
-    // final another = ARKitMaterial(
-    //   lightingModelName: ARKitLightingModel.physicallyBased,
-    //   diffuse: ARKitMaterialProperty.image('assets/wimtorq-logo.jpg'),
-    // );
-
     final sphere = ARKitSphere(
       materials: [material],
-      radius: 0.5,
+      radius: 0.2,
     );
 
     final node = ARKitNode(
