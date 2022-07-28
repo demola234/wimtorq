@@ -1,17 +1,26 @@
-# wimtorqq
+# Wimtorq ARKIT APP
 
-A new Flutter project.
+App and Up Flutter Take Home Project
 
-## Getting Started
+## Introduction
 
-This project is a starting point for a Flutter application.
+This project is the implementation of the App and Up Flutter Take Home Project.
 
-A few resources to get you started if this is your first Flutter project:
+### Requirements
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+1. Create a Flutter App called Wimtorq
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# wimtorq-
+2. On lunch, add a splash screen with the Wimtorq logo
+
+3. After the splash screen, implement a simple AR system using the https://pub.dev/packages/arkit_plugin package
+
+4. Using the package on step 3 above implement a Sphere with the Wimtorq logo as a texture and it should have a rotation animation.
+
+### Implementation
+
+- ARKIT was Implemented
+- App Icon was added on Launch of the Application
+
+### Build Limitations
+
+- ARKIT Run only on a Real IOS Devices
