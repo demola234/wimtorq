@@ -1,4 +1,4 @@
-name: wimtorqq
+name: wimtorq
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -14,30 +14,34 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   arkit_plugin: ^1.0.5
+  flutter_native_splash: ^2.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
+  flutter_launcher_icons:
 
 flutter:
   uses-material-design: true
 
+flutter_native_splash:
+  color: "#76B536"
+  image: assets/image/splash.png
+  android: true
+  ios: true
+  fullscreen: true
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/image/logo.png"
+
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/wimtorq-logo.jpg
-  #   - images/a_dot_ham.jpeg
+    - assets/image/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
+  
   # example:
   # fonts:
   #   - family: Schyler

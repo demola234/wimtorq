@@ -1,9 +1,10 @@
-import 'dart:async';
-import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
-import 'package:vector_math/vector_math_64.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:wimtorq/presentation/ar_screen.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 
@@ -15,52 +16,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late ARKitController arkitController;
-  Timer? timer;
-
   @override
-  void dispose() {
-    timer?.cancel();
-    arkitController.dispose();
-    super.dispose();
+  void initState() {
+    FlutterNativeSplash.remove();
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(),
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-            appBar: AppBar(
-                backgroundColor: Color(0xFF76B536),
-                title: const Text('Wimtorq ARView')),
-            body: ARKitSceneView(onARKitViewCreated: onARKitViewCreated)));
-  }
-
-  void onARKitViewCreated(ARKitController arkitController) {
-    this.arkitController = arkitController;
-
-    final material = ARKitMaterial(
-      lightingModelName: ARKitLightingModel.lambert,
-      diffuse: ARKitMaterialProperty.image('assets/wimtorq-logo.jpg'),
-    );
-
-    final sphere = ARKitSphere(
-      materials: [material],
-      radius: 0.2,
-    );
-
-    final node = ARKitNode(
-      geometry: sphere,
-      position: Vector3(0, 0, -0.5),
-      eulerAngles: Vector3.zero(),
-    );
-    this.arkitController.add(node);
-
-    timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
-      final rotation = node.eulerAngles;
-      rotation.x += 0.01;
-      node.eulerAngles = rotation;
-    });
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: Scaffold(body: ARScreen()));
   }
 }
