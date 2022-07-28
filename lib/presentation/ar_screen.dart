@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:vector_math/vector_math_64.dart';
 import 'package:arkit_plugin/arkit_plugin.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/image_assets.dart';
 
 class ARScreen extends StatefulWidget {

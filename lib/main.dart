@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             appBar: AppBar(
-                backgroundColor: WimtorqColor.wimtorqPrimaryColor,
+                backgroundColor: WimtorqColor.wimtorqSecColor,
                 title: const Text('Wimtorq ARView')),
             body: const ARScreen()));
   }
