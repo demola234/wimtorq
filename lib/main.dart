@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:wimtorq/presentation/ar_screen.dart';
+import 'package:wimtorq/utils/color_assets.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: Scaffold(body: ARScreen()));
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+            appBar: AppBar(
+                backgroundColor: WimtorqColor.wimtorqPrimaryColor,
+                title: const Text('Wimtorq ARView')),
+            body: const ARScreen()));
   }
 }
